@@ -1,0 +1,17 @@
+{
+  "root": true,
+  "extends": ["next/core-web-vitals", "plugin:import/recommended", "prettier"],
+  "plugins": ["unused-imports"],
+  "rules": {
+    "sort-imports": "off",
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "order": "asc"
+        }
+      }
+    ],
+    "unused-imports/no-unused-imports": "error"
+  }
+}

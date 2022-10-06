@@ -1,0 +1,56 @@
+{
+  "name": "name-bingo",
+  "version": "0.1.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/genki-sano/gas-ts-template.git"
+  },
+  "author": "Genki Sano (https://github.com/genki-sano)",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "husky install",
+    "lint-staged": "lint-staged",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint --dir src",
+    "lint:fix": "yarn lint --fix",
+    "lint:style": "stylelint src/**/*.{css,scss}",
+    "lint:style:fix": "yarn lint:style --fix",
+    "format": "prettier --write src/**/*"
+  },
+  "dependencies": {
+    "next": "12.3.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.8.2",
+    "@types/react": "18.0.21",
+    "@types/react-dom": "18.0.6",
+    "eslint": "8.24.0",
+    "eslint-config-next": "12.3.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "stylelint": "^14.13.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-config-standard": "^28.0.0",
+    "typescript": "4.8.4"
+  },
+  "volta": {
+    "node": "16.17.0",
+    "yarn": "1.22.19"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "yarn lint:fix",
+      "yarn lint:style:fix",
+      "yarn format"
+    ]
+  }
+}
