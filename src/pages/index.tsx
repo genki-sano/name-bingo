@@ -1,7 +1,14 @@
-import { NextPage } from 'next'
+import type { NextPage } from 'next'
 import Head from 'next/head'
+import { Top, User } from '@/component/Top'
+import { getUsersByIsSelected } from '@/external/firebase/firestore'
 
-const IndexPage: NextPage = () => {
+type Props = {
+  unselected: User[]
+  selected: User[]
+}
+
+const HomePage: NextPage<Props> = ({ unselected, selected }) => {
   return (
     <>
       <Head>
@@ -12,8 +19,21 @@ const IndexPage: NextPage = () => {
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
+      <Top unselected={unselected} selected={selected} />
     </>
   )
 }
 
-export default IndexPage
+export const getServerSideProps = async () => {
+  const unselected = await getUsersByIsSelected(false)
+  const selected = await getUsersByIsSelected(true)
+
+  return {
+    props: {
+      unselected,
+      selected,
+    },
+  }
+}
+
+export default HomePage

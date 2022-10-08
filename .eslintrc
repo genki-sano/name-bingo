@@ -4,6 +4,7 @@
   "plugins": ["unused-imports"],
   "rules": {
     "sort-imports": "off",
+    "react-hooks/exhaustive-deps": "off",
     "import/order": [
       "error",
       {
