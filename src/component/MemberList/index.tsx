@@ -15,7 +15,7 @@ export const MemberList: React.FC<Props> = ({ users }) => {
     <List
       subheader={
         <ListSubheader component='div' id='nested-list-subheader'>
-          すでに出た人たち
+          すでに出た人たち（敬称略）
         </ListSubheader>
       }
     >
