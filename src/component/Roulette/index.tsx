@@ -116,10 +116,16 @@ export const Roulette: React.FC<Props> = ({
       >
         {isStopped ? (
           <AnimationImageWrapper>
-            <Image alt={`${currentItem?.name}`} src={`${currentItem?.url}`} />
+            <Image
+              alt={`${currentItem?.name}`}
+              src={`${currentItem?.url || '/img/person.jpeg'}`}
+            />
           </AnimationImageWrapper>
         ) : (
-          <Image alt={`${item?.name}`} src={`${item?.url}`} />
+          <Image
+            alt={`${item?.name}`}
+            src={`${item?.url || '/img/person.jpeg'}`}
+          />
         )}
       </Box>
       <Box sx={{ p: 2 }}>

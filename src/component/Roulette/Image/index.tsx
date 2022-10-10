@@ -1,8 +1,8 @@
 import Box from '@mui/material/Box'
 
 type Props = {
-  alt?: string
-  src?: string
+  alt: string
+  src: string
 }
 
 export const Image: React.FC<Props> = ({ alt, src }) => {
@@ -14,9 +14,10 @@ export const Image: React.FC<Props> = ({ alt, src }) => {
         height: 500,
         borderRadius: '50%',
         objectFit: 'cover',
+        border: 'solid #bdbdbd',
       }}
-      alt={alt || '選択なし'}
-      src={src || 'public/img/person.jpeg'}
+      alt={alt}
+      src={src}
     />
   )
 }
